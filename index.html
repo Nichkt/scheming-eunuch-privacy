@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -13,12 +13,12 @@ h2{font-size:1.15rem;margin-top:1.8rem}a{color:#8b1a1a}
 </head>
 <body>
 <h1>Scheming Eunuch privacy policy</h1>
-<p><em>Effective October 1, 2026</em></p>
+<p><em>Effective October 2, 2026</em></p>
 <p>Scheming Eunuch is an Android app by Nicholas Ton: a comedic AI assistant, voiced as a sycophantic palace eunuch, that lives in a home-screen widget. This policy says what it does with information.</p>
-<p>In short: there's no developer account, no ads and no analytics. Your chats stay on your phone, except that what you say to the assistant is sent to the AI provider <em>you</em> choose, using your own key. The developer never receives any of it.</p>
+<p>In short: there's no developer account, no ads and no analytics. Your chats stay on your phone, except that what you say to the assistant is sent to the AI provider <em>you</em> choose, using your own key, or to the free trial service described below if you haven't added a key. The developer doesn't keep your messages.</p>
 
 <h2>What the app keeps on your phone</h2>
-<p>The app stores your conversation, a short running summary of it, the facts the assistant has noted about you (for example, that you like tea), your reminders and your settings (names, title, voice, briefing time). API keys are encrypted with the Android Keystore. None of this is sent to the developer, who runs no server for the app. App data is excluded from Android backups. You can erase memories and chat history in Settings, and uninstalling the app deletes everything.</p>
+<p>The app stores your conversation, a short running summary of it, the facts the assistant has noted about you (for example, that you like tea), your reminders and your settings (names, title, voice, briefing time). API keys are encrypted with the Android Keystore. None of this is sent to the developer, apart from messages passed through the free trial service described below. App data is excluded from Android backups. You can erase memories and chat history in Settings, and uninstalling the app deletes everything.</p>
 
 <h2>What the app sends over the internet</h2>
 <p><strong>Your AI provider.</strong> The app needs an AI provider to answer you. You pick one (OpenRouter, Google Gemini, OpenAI or Anthropic) and supply your own key. When you send a message, or when the daily briefing is written, the app sends that provider your recent messages, the running summary, the noted facts, the current local date and time, and the assistant's instructions. The provider handles this under its own terms and privacy policy and your account with it:
@@ -26,7 +26,8 @@ h2{font-size:1.15rem;margin-top:1.8rem}a{color:#8b1a1a}
 <a href="https://policies.google.com/privacy">Google</a>,
 <a href="https://openai.com/policies/privacy-policy">OpenAI</a>,
 <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>.
-Free models may use what is sent to improve their services. Without a key, the app works offline with canned replies and sends nothing.</p>
+Free models may use what is sent to improve their services.</p>
+<p><strong>Free trial ("palace oracle").</strong> If you haven't added your own key, the app sends the same information to a small relay run by the developer on Cloudflare Workers, along with a random install ID that the app creates. The relay forwards your messages to Google Gemini's free tier and returns the reply. It doesn't store your messages. To enforce daily limits it keeps only salted, one-way hashes of the install ID and your IP address, with a count of today's requests, and these are deleted within a few days. Google may use content sent to its free tier to improve its products (see <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>), and Cloudflare handles traffic under its <a href="https://www.cloudflare.com/privacypolicy/">privacy policy</a>. Adding your own key in Settings stops use of the trial. If the trial is unavailable or used up and there's no key, the app replies offline with canned lines and sends nothing.</p>
 <p><strong>OpenRouter sign-in.</strong> If you choose "Sign in with OpenRouter", your browser opens OpenRouter's sign-in page; OpenRouter then gives the app a key, which is stored encrypted on your phone. The app also downloads public lists of available models from your provider.</p>
 <p><strong>Court gossip (optional, off by default).</strong> If you turn it on and grant Android notification access, the app reads the title and text of notifications from other apps. They are kept only in memory, never saved to storage, and are sent to your AI provider only when you ask about notifications or for the daily briefing. You can turn this off in Settings or in Android's settings.</p>
 <p>All of this goes over encrypted (HTTPS) connections.</p>
